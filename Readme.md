@@ -24,4 +24,7 @@ This application uses these AWS Services:
 *	Amazon Simple Email Service
 *	AWS Elastic BeanStalk
 
+**Cost to complete:** The AWS Services included in this document are included in the [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc). 
+
+**Note:** Be sure to terminate all of the resources you create while going through this tutorial to ensure that you’re no longer charged.
 
