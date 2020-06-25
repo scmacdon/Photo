@@ -56,7 +56,7 @@ The AWS Photo Analyzer application supports uploading images to a S3 bucket. Aft
 
 To generate a report, you enter an email address and choose Analyze Photos. 
 
-![AWS Photo Analyzer](images/Photo2.png)
+![AWS Photo Analyzer](images/photo2.png)
 
 ## Create an IntelliJ project named SpringPhotoAnalyzer
 
@@ -71,4 +71,4 @@ To generate a report, you enter an email address and choose Analyze Photos.
 
 At this point, you have a new project named **SpringPhotoAnalyzer**.
 
-![AWS Photo Analyzer](images/Photo3.png)
+![AWS Photo Analyzer](images/photo3.png)
