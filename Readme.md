@@ -203,3 +203,12 @@ The Java files go into this package.
 
 ![AWS Photo Analyzer](images/photo5.png)
 
+Create these Java classes: 
+
++ **AnalyzePhotos** - Uses the Amazon Rekognition API to analyze the images. 
++ **BucketItem** - Used as a model that stores S3 bucket information.   
++ **PhotoApplication** - Used as the base class for the Spring Boot application.
++ **PhotoController** - Used as the Spring Boot Controller that handles HTTP requests. 
++ **S3Service** - Uses the Amazon S3 API to perform S3 operations. 
++ **WorkItem** - Used as a model that stores Rekognition data.
++ **WriteExcel** – Uses the JXL API (this is not an AWS API) to dynamically generate a report.     
