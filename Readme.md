@@ -16,9 +16,12 @@ After the application analyzes this image, it creates this data.
 *	Water - 93.501465
 *	Lake - 87.28128
 
+In addition, this application uses the Simple Email Service (SES) to send a report to a given email recipient. In this tutorial, you create a Spring Boot application named AWS Photo Analyzer application. The Spring Boot APIs are used to build a model, different views, and a controller. 
 
-This tutorial guides you through creating the AWS Tracker application. Once the application is developed, you'll learn how to deploy it to Elastic Beanstalk.
-
-The following figure shows you the structure of the Java project.
+This application uses these AWS Services: 
+*	Amazon Rekognition
+*	Amazon S3
+*	Amazon Simple Email Service
+*	AWS Elastic BeanStalk
 
 
