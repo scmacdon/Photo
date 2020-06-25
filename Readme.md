@@ -347,8 +347,8 @@ The following Java code represents the **PhotoApplication** class.
 
     public static void main(String[] args) {
         SpringApplication.run(PhotoApplication.class, args);
+      }
      }
-   }
 
 ### PhotoController class
 
@@ -463,8 +463,8 @@ The following Java code represents the **PhotoController** class that handles HT
             e.printStackTrace();
         }
         return new ModelAndView(new RedirectView("photo"));
-      }
-     } 
+        }
+       } 
 
 ### S3Service class
 
@@ -509,7 +509,7 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
                 .build();
 
         return s3;
-    }
+      }
 
     public byte[] getObjectBytes (String bucketName, String keyName) {
 
@@ -533,7 +533,7 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
             System.exit(1);
         }
         return null;
-    }
+     }
 
     // Returns the names of all images and data within an XML document
     public String ListAllObjects(String bucketName) {
@@ -574,7 +574,7 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
             System.exit(1);
         }
         return null ;
-    }
+      }
 
     // Returns the names of all images in the given bucket
     public List ListBucketObjects(String bucketName) {
@@ -629,7 +629,7 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
             System.exit(1);
         }
         return "";
-    }
+     }
 
     // Convert Bucket item data into XML to pass back to the view
     private Document toXml(List<BucketItem> itemList) {
@@ -674,14 +674,14 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
                 Element desc = doc.createElement( "Size" );
                 desc.appendChild( doc.createTextNode(myItem.getSize() ) );
                 item.appendChild( desc );
-        }
+          }
 
             return doc;
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
         }
         return null;
-    }
+      }
 
     private String convertToString(Document xml) {
         try {
@@ -695,8 +695,8 @@ The following class uses the Amazon S3 API to perform S3 operations. For example
             ex.printStackTrace();
         }
         return null;
+        }
       }
-    }
 
 ### SendMessage class
 
@@ -843,8 +843,8 @@ The following Java class represents the **SendMessage** class. This class uses t
             System.exit(1);
         }
         System.out.println("Email sent with attachment");
+        }
        }
-      }
       
  ### WorkItem class
  
@@ -880,8 +880,8 @@ The following Java class represents the **SendMessage** class. This class uses t
 
      public String getConfidence() {
         return this.confidence;
+      }
      }
-    }
 
 ### WriteExcel class
 
@@ -1016,7 +1016,7 @@ The following Java code represents the **WriteExcel** class.
 
           }
           return size;
-        }
+         }
 
        private void addCaption(WritableSheet sheet, int column, int row, String s)
             throws WriteException {
@@ -1046,7 +1046,7 @@ The following Java code represents the **WriteExcel** class.
             sheet.setColumnView(column, cc+6);
 
         sheet.addCell(label);
-      }
+       }
 
     private int countString (String ss) {
         int count = 0;
@@ -1057,6 +1057,6 @@ The following Java code represents the **WriteExcel** class.
                 count++;
         }
         return count;
+       }
      }
-   }
 
