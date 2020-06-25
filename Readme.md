@@ -28,3 +28,22 @@ This application uses these AWS Services:
 
 **Note:** Be sure to terminate all of the resources you create while going through this tutorial to ensure that you’re no longer charged.
 
+#### Topics
+
++ Prerequisites
++ Understand the AWS Photo Analyzer application.
++ Create an IntelliJ project named SpringPhotoAnalyzer.
++ Add the POM dependencies to your project.
++	Create the Java classes. 
++	Package the project into a Jar file.
++	Deploy the application to the AWS Elastic Beanstalk.
+
+## Prerequisites
+
+To follow along with the tutorial, you need the following:
+
++ An AWS Account.
++ A Java IDE (for this tutorial, the IntelliJ IDE is used).
++ Java 1.8 JDK. 
++ Maven 3.6 or higher.
++ A S3 bucket named **photos**. For information, see [creating a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
