@@ -82,11 +82,11 @@ Add the following dependencies for the Amazon services (AWS Java SDK version 2).
     <dependency>
       <groupId>software.amazon.awssdk</groupId>
       <artifactId>rekognition</artifactId>
-   </dependency>
-   <dependency>
-    <groupId>software.amazon.awssdk</groupId>
-    <artifactId>s3</artifactId>
-   </dependency>
+     </dependency>
+     <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+     </dependency>
    
    **Note:**  Ensure that you are using Java 1.8 (as shown below).
    
