@@ -47,3 +47,9 @@ To follow along with the tutorial, you need the following:
 + Java 1.8 JDK. 
 + Maven 3.6 or higher.
 + A S3 bucket named **photos**. For information, see [creating a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
+
+## Understand the AWS Photo Analyzer application
+
+The AWS Photo Analyzer application supports uploading images to a S3 bucket. After the images are uploaded, you can view the images that are analyzed.
+
+![AWS Photo Analyzer](images/Photo1.png)
