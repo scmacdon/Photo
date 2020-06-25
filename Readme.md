@@ -7,14 +7,14 @@ For example, the following image shows a lake.
 ![AWS Photo Analyzer](images/Lake.png)
 
 After the application analyzes this image, it creates this data. 
-•	Panoramic - 99.99971
-•	Outdoors - 99.99971
-•	Nature - 99.99971
-•	Landscape - 99.99971
-•	Scenery	 - 99.99971
-•	Wilderness - 96.90007
-•	Water - 93.501465
-•	Lake - 87.28128
+*	Panoramic - 99.99971
+*	Outdoors - 99.99971
+*	Nature - 99.99971
+*	Landscape - 99.99971
+*	Scenery	 - 99.99971
+*	Wilderness - 96.90007
+*	Water - 93.501465
+*	Lake - 87.28128
 
 
 This tutorial guides you through creating the AWS Tracker application. Once the application is developed, you'll learn how to deploy it to Elastic Beanstalk.
