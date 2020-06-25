@@ -53,3 +53,22 @@ To follow along with the tutorial, you need the following:
 The AWS Photo Analyzer application supports uploading images to a S3 bucket. After the images are uploaded, you can view the images that are analyzed.
 
 ![AWS Photo Analyzer](images/Photo1.png)
+
+To generate a report, you enter an email address and choose Analyze Photos. 
+
+![AWS Photo Analyzer](images/Photo2.png)
+
+## Create an IntelliJ project named SpringPhotoAnalyzer
+
+1. In the IntelliJ IDE, choose **File**, **New**, **Project**. 
+2. In the **New Project** dialog box, choose **Maven**, and then choose **Next**. 
+3. For **GroupId**, enter **aws-spring**. 
+4. For **ArtifactId**, enter **SpringPhotoAnalyzer**. 
+6. Choose **Next**.
+7. Choose **Finish**. 
+
+## Add the POM dependencies to your project
+
+At this point, you have a new project named **SpringPhotoAnalyzer**.
+
+![AWS Photo Analyzer](images/Photo3.png)
