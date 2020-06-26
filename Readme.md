@@ -4,7 +4,7 @@ You can create an AWS application that analyzes nature images located in a S3 bu
 The application can analyze many images and generate a report that breaks down each image into a series of labels. 
 For example, the following image shows a lake.
 
-![AWS Photo Analyzer](images/Lake.png)
+![AWS Photo Analyzer](images/Lake1.png)
 
 After the application analyzes this image, it creates this data. 
 *	Panoramic - 99.99971
