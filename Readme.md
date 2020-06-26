@@ -48,7 +48,7 @@ To follow along with the tutorial, you need the following:
 + A Java IDE (for this tutorial, the IntelliJ IDE is used).
 + Java 1.8 JDK. 
 + Maven 3.6 or higher.
-+ A S3 bucket named **photos**. For information, see [creating a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
++ A S3 bucket named **photos<somevalue>**. Besure to use this bucket name in your S3 Java code. For information, see [creating a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
 
 ## Understand the AWS Photo Analyzer application
 
