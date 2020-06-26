@@ -56,7 +56,7 @@ The AWS Photo Analyzer application supports uploading images to a S3 bucket. Aft
 
 ![AWS Photo Analyzer](images/Photo1.png)
 
-To generate a report, you enter an email address and choose Analyze Photos. 
+To generate a report, enter an email address and choose **Analyze Photos**. 
 
 ![AWS Photo Analyzer](images/photo2.png)
 
