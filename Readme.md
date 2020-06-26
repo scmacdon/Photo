@@ -209,6 +209,7 @@ Create these Java classes:
 + **BucketItem** - Used as a model that stores S3 bucket information.   
 + **PhotoApplication** - Used as the base class for the Spring Boot application.
 + **PhotoController** - Used as the Spring Boot Controller that handles HTTP requests. 
++ **SendMessages** - Uses the SES API to send an email message with an attachment. 
 + **S3Service** - Uses the Amazon S3 API to perform S3 operations. 
 + **WorkItem** - Used as a model that stores Rekognition data.
 + **WriteExcel** – Uses the JXL API (this is not an AWS API) to dynamically generate a report.     
