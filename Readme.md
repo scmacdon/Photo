@@ -1060,3 +1060,290 @@ The following Java code represents the **WriteExcel** class.
        }
      }
 
+## Create the HTML files
+
+At this point, you have created all of the Java files required for the AWS Photo Analyzer application. Now you create the HTML files that are required for the application's graphical user interface (GUI). Under the resource folder, create a template folder and then create the following HTML files:
+
++ index.html
++ process.html
++ upload.html
++ layout.html
+
+The index.html file is the application's home view. The process.html file represents the view for creating a report. The upload.html file represets the view for uploading image files to an S3 bucket. Finally, the layout.html file represents the menu visible in all views.
+
+### index.html
+
+The following HTML code represents the index.html file.
+
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+     <script th:src="|https://code.jquery.com/jquery-1.12.4.min.js|"></script>
+     <script th:src="|https://code.jquery.com/ui/1.11.4/jquery-ui.min.js|"></script>
+     <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}" />
+     <link rel="icon" href="../public/images/favicon.ico" th:href="@{/images/favicon.ico}" />
+
+    <title>AWS Photo Analyzer</title>
+    </head>
+    <body>
+    <header th:replace="layout :: site-header"/>
+    <div class="container">
+
+    <h2>AWS Photo Analyzer Application</h2>
+
+    <p>The AWS Photo Analyzer application is a sample application that uses the Amazon Rekognition Service as well as other AWS Services and the Java V2 SDK.
+        Analyzing nature photographs has never been easier! Simply perform these steps:<p>
+
+    <ol>
+        <li>You can upload a nature photograph to a S3 bucket by choosing the <i>Upload Photos</i> menu item.</li>
+        <li>Choose <i>Choose File</i> and browse to a nature image located on your local desktop.</li>
+        <li>Choose <i>Upload</i> to upload your image to a S3 bucket.</li>
+        <li>You can choose <i>Get Images</i> to view the images located in the S3 bucket. All images in the S3 bucket are displayed in the table. </li>
+        <li>You can analyze the photographs and produce a report by choosing the <i>Analyze Photos</i> menu item. </li>
+        <li>Enter an email address in the email field and choose <i>Analyze Photos</i>.  </li>
+        <li>The Amazon Simple Email Service is used to send an email with an Excel report to the specified email recipient.</li>
+    </ol>
+    </div>
+    </body>
+    </html>
+
+### process.html
+
+The following HTML code represents the **process.html** file.
+
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+     <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+     <script th:src="|https://code.jquery.com/jquery-1.12.4.min.js|"></script>
+     <script th:src="|https://code.jquery.com/ui/1.11.4/jquery-ui.min.js|"></script>
+     <script src="../public/js/message.js" th:src="@{/js/message.js}"></script>
+
+     <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}" />
+     <link rel="icon" href="../public/images/favicon.ico" th:href="@{/images/favicon.ico}" />
+
+     <title>AWS Photo Analyzer</title>
+
+     <script>
+        function myFunction() {
+            alert("The form was submitted");
+        }
+     </script>
+
+    </head>
+
+    <body>
+    <header th:replace="layout :: site-header"/>
+
+    <div class="container">
+
+    <h2>AWS Photo Analyzer Application</h2>
+    <p>You can generate a report that analyzes the images in the S3 bucket. You can send the report to the following email address. </p>
+    <label for="email">Email address:</label><br>
+    <input type="text" id="email" name="email" value=""><br>
+
+    <div>
+        <br>
+        <p>Click the following button to obtain a report</p>
+        <button onclick="ProcessImages()">Analyze Photos</button>
+    </div>
+    </div>
+    </body>
+    </html>
+
+### upoad.html
+
+The following HTML code represents the **upload.html** file.
+
+    <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script th:src="|https://code.jquery.com/jquery-1.12.4.min.js|"></script>
+    <script th:src="|https://code.jquery.com/ui/1.11.4/jquery-ui.min.js|"></script>
+    <script th:src="|https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js|"></script>
+    <script src="../public/js/items.js" th:src="@{/js/items.js}"></script>
+
+    <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+    <link rel="stylesheet" th:href="|https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css|"/>
+    <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}" />
+    <link rel="icon" href="../public/images/favicon.ico" th:href="@{/images/favicon.ico}" />
+
+
+    <title>AWS Photo Analyzer</title>
+
+    <script>
+        function myFunction() {
+            alert("The form was submitted");
+        }
+    </script>
+    </head>
+
+    <body>
+    <header th:replace="layout :: site-header"/>
+
+    <div class="container">
+     <h2>AWS Photo Analyzer Application</h2>
+     <p>Upload images to an S3 Bucket. Each image will be analysed!</p>
+
+     <form method="POST" onsubmit="myFunction()" action="/upload" enctype="multipart/form-data">
+      <input type="file" name="file" /><br/><br/>
+      <input type="submit" value="Submit" />
+     </form>
+    <div>
+    <br>
+
+    <p>Click the following button to determine the number of images in the bucket</p>
+
+    <button onclick="getImages()">Get Images</button>
+    <table id="myTable" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Date</th>
+            <th>Size</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>No Data</td>
+            <td>No Data</td>
+            <td>No Data </td>
+            <td>No Data</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Date</th>
+            <th>Size</th>
+        </tr>
+        </tfoot>
+        <div id="success3"></div>
+    </table>
+    </div>
+    </div>
+    </body>
+    </html>
+
+### layout.html
+
+The following code represents the **layout.html** file that represents the application's menu.
+
+     <!DOCTYPE html>
+     <html xmlns:th="http://www.thymeleaf.org">
+     <head th:fragment="site-head">
+      <meta charset="UTF-8" />
+      <link rel="icon" href="../public/images/favicon.ico" th:href="@{/images/favicon.ico}" />
+      <script th:src="|https://code.jquery.com/jquery-1.12.4.min.js|"></script>
+      <meta th:include="this :: head" th:remove="tag"/>
+    </head>
+    <body>
+      <!-- th:hef calls a controller method - which returns the view -->
+     <body th:fragment="site-header">
+      <a href="index.html" th:href="@{/}"><img src="../public/images/site-logo.png" th:src="@{/images/site-logo.png}" /></a>
+      <a href="#" style="color: white" th:href="@{/}">Home</a>
+      <a href="#" style="color: white" th:href="@{/photo}">Upload Photos</a>
+      <a href="#"  style="color: white" th:href="@{/process}">Analyze Photos</a>
+    </body>
+    </html>
+    
+## Create script files
+
+Both the upload and process views use script files to communicate with the Spring controller. You have to ensure that these files are part of your project; otherwise, your application doesn’t work.
+
++ items.js
++ message.js
+
+Both files contain application logic that sends a request to the Spring Controller. In addition, these files handle the response and set the data in the view.
+
+### items.js
+
+The following JavaScript represents the **items.js** file.
+
+    $(function() {
+
+    $('#myTable').DataTable( {
+        scrollY:        "500px",
+        scrollX:        true,
+        scrollCollapse: true,
+        paging:         true,
+        columnDefs: [
+            { width: 200, targets: 0 }
+        ],
+        fixedColumns: true
+     } );
+    } );
+
+    function getImages() {
+
+     var xhr = new XMLHttpRequest();
+     xhr.addEventListener("load", handleimages, false);
+     xhr.open("GET", "../getimages", true);   //buildFormit -- a Spring MVC controller
+     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//necessary
+     xhr.send();
+    }
+
+   function handleimages() {
+
+    var xml = event.target.responseText;
+    var oTable = $('#myTable').dataTable();
+    oTable.fnClearTable(true);
+    $(xml).find('Item').each(function () {
+
+        var $field = $(this);
+        var key = $field.find('Key').text();
+        var name = $field.find('Owner').text();
+        var date = $field.find('Date').text();
+        var size = $field.find('Size').text();
+
+        //Set the new data
+        oTable.fnAddData( [
+            key,
+            name,
+            date,
+            size,,]
+         );
+      });
+    }
+
+### message.js
+
+The following JavaScript represents the **message.js** file. The **ProcessImages** function sends a request to the **/report** handler in the Controller that generates a report. Notice that an email address is posted to the Controller method. 
+
+    $(function() {
+
+   } );
+
+   function ProcessImages() {
+
+    //Post the values to the controller
+    var email =  $('#email').val();
+
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", handle, false);
+    xhr.open("POST", "../report", true);   //buildFormit -- a Spring MVC controller
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//necessary
+    xhr.send("email=" + email);
+    }
+
+   function handle(event) {
+    var res = event.target.responseText;
+    alert(res) ;
+   }
+   
+**Note:** There are other CSS files located in the GitHub repository that you must add to your project. Ensure all of the files under the resources folder are included in your project.   
